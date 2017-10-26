@@ -1,7 +1,7 @@
 {
   "public": {},
   "private": {
-    "MAIL_URL": "",
+    "MAIL_URL": "smtp://postmaster:c2f7b5413e67db64fcf6b6c60e8f957e@sandbox4a2a660236d54b7ca759a4d0c220f637.mailgun.org:2525",
     "OAuth": {
       "facebook": {
         "appId": "",

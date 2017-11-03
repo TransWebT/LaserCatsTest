@@ -2,9 +2,9 @@ module.exports = {
   servers: {
     one: {
       // TODO: set host address, username, and authentication method
-      host: '1.2.3.4',
-      username: 'root',
-      // pem: './path/to/pem'
+      host: '35.196.181.109',
+      username: 'ttompkins',
+      pem: '~/.ssh/google_compute_engine'
       // password: 'server-password'
       // or neither for authenticate from ssh-agent
     }
@@ -12,8 +12,8 @@ module.exports = {
 
   app: {
     // TODO: change app name and path
-    name: 'app',
-    path: '../app',
+    name: 'LaserCats',
+    path: '..',
 
     servers: {
       one: {},
@@ -26,8 +26,8 @@ module.exports = {
     env: {
       // TODO: Change to your app's url
       // If you are using ssl, it needs to start with https://
-      ROOT_URL: 'http://app.com',
-      MONGO_URL: 'mongodb://localhost/meteor',
+      ROOT_URL: 'http://35.196.181.109',
+      MONGO_URL: 'mongodb://localhost/lasercats',
     },
 
     // ssl: { // (optional)
@@ -44,12 +44,19 @@ module.exports = {
       image: 'abernix/meteord:base',
     },
 
+    // This is the maximum time in seconds it will wait
+    // for your app to start
+    // Add 30 seconds if the server has 512mb of ram
+    // And 30 more if you have binary npm dependencies.
+    deployCheckWaitTime: 120,
+
     // Show progress bar while uploading bundle to server
     // You might need to disable it on CI servers
-    enableUploadProgressBar: true
+    enableUploadProgressBar: false
   },
 
   mongo: {
+    port: 27017,
     version: '3.4.1',
     servers: {
       one: {}
